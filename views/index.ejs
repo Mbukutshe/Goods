@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Insert an <%= title %></p>
+                <form action="/index" method="post">
+                <br/>
+                <br/>
+                <label><%= descrpt %></label>
+                <br/>
+                <textarea rows="10" cols="40" name = "descript"></textarea>
+                <br/>
+                <br/>
+                <label><%= q_label %></label>
+                <br/>
+                <input type="number" name = "quantity"/>
+                <br/>
+                <br/>
+                <label><%= orderNo %></label>
+                <br/>
+                <input type="text" name = "order_no"/>
+                <br/>
+                 <br/>
+                 <label><%= date %></label>
+                 <br/>
+                  <input type="date" name = "dateReceived"/>
+                 <br/>
+                 <br/>
+                 <input type="submit" id="save"/>
+                 </form>
+                 <br/>
+                 <br/>
+                 <br/>
+                  <h1>Available Goods</h1>
+                  <br/>
+                  <br/>
+                 <table>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Quantity</th>
+                        <th>Item Description</th>
+                        <th>Date Received</th>
+                    </tr>
+                    <% data.forEach(function(item){%>
+                    <tr>
+                        <td><%=item.OrderNumber%></td>
+                        <td><%=item.Quantity%></td>
+                        <td><%=item.Description%></td>
+                        <td><%=item.DateReceived%></td>
+                    </tr>
+                    <%})%>
+                 </table>
+  </body>
+</html>
